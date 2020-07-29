@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    /* text-decoration: none; */
+}
+
+body {
+    /* display: grid; */
+    /* transform: translate(50%); */
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(143, 148, 139);
+    color: rgb(244, 247, 241);
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+.js-articles {
+    display: flex;
+    flex-flow: column;
+}
+
+.js-articles a {
+    font-size: 14px;
+    color: black;
+}

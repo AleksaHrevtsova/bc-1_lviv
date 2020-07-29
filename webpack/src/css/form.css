@@ -1,0 +1,11 @@
+#feedback-form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 600px;
+}
+
+#feedback-form textarea {
+    width: 100%;
+    resize: none;
+}

@@ -1,0 +1,26 @@
+{{!-- // ============= Ivanuts ========================= // --}}
+{{!-- {{#each this}}
+<li>
+    <h3>{{name}}</h3>
+    <p>Capital: {{capital}}</p>
+    <p>Population: {{population}}</p>
+    <ul>
+        <h5>Languages:</h5>
+        {{#each languages}}
+
+        <li>{{this.name}}</li>
+        {{/each}}
+    </ul>
+    <img src="{{flag}}" alt="{{nativeName}}" width="400">
+</li>
+{{/each}} --}}
+{{!-- // ============= Ivanuts ========================= // --}}
+
+{{!-- // ============= Zdrok ========================= // --}}
+{{#each this}}
+<li class="many-country">
+    <img src="{{flag}}" alt="{{nativeName}}" width="30" height="30">
+    <h3>{{name}}<h3>
+</li>
+{{/each}}
+{{!-- // ============= Zdrok ========================= // --}}
