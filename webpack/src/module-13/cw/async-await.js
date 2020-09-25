@@ -22,7 +22,7 @@ async function fetchAsyncTodos() {
     await delay(2000);
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data);
+    return console.log(data);
   } catch (e) {
     console.error(e);
   } finally {

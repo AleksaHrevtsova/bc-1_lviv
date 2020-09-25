@@ -8,13 +8,19 @@
 // newTimer();
 // import "./js/feedback";
 // import posts from "./data/posts.json";
+// console.log(posts);
 
+// import "./module-11/cw/date";
+// import "./module-11/cw/promiseApi";
+// import "./module-12/cw/api";
+// import "./module-13/cw/theory";
+import "./module-14/webSockets";
 // ИМПОРТЫ ПО МОДУЛЯМ
 // 13 - HW
 // import "./module-10/hw/module-10";
-import "./module-11/hw/switchColor";
-import "./module-11/hw/promisification";
-import "./module-11/hw/timer";
+// import "./module-11/hw/switchColor";
+// import "./module-11/hw/promisification";
+// import "./module-11/hw/timer";
 // import "./module-12/hw/module-12";
 // import "./module-13/hw/module-13";
 // import './basicLightbox.min.css';
@@ -119,7 +125,7 @@ import "./module-11/hw/timer";
 // let subscriptionCounter = 0;
 // // функция, выводящая 5 сообщений с интервалом в 1с
 // const intervalId = setInterval(() => {
-//   // условие проверки выполнениявызова функции
+//   // условие проверки выполнения вызова функции
 //   if (subscriptionCounter === 5) {
 //     console.log("Stop interval");
 //     // остановка интервала вызова функции

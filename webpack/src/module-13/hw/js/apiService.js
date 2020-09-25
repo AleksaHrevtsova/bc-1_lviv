@@ -56,40 +56,77 @@
 // };
 // // ================== Musyka Marian =================== //
 
+// // ==================== Zdrok Vova ==================== //
+// const apiKey = '15400175-8ce22b8808542891276b8dfa1';
 
-// ==================== Zdrok Vova ==================== //
-const apiKey = '15400175-8ce22b8808542891276b8dfa1';
+// export default {
+//   searchQuery: '',
+//   page: 1,
+
+//   fetchArticles() {
+//     let url = `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${apiKey}`;
+//     const options = {
+//       headers: {
+//         Authorization: apiKey,
+//       },
+//     };
+
+//     return fetch(url)
+//       .then(res => res.json())
+//       .then(({ hits }) => {
+//         this.page += 1;
+//         return hits;
+//       });
+//   },
+//   resetPage() {
+//     this.page = 1;
+//   },
+//   get query() {
+//     return this.searchQuery;
+//   },
+//   set query(value) {
+//     this.searchQuery = value;
+//   },
+// };
+// // ==================== Zdrok Vova ==================== //
+
+// =================== Petrovskii Andrii =================== //
+const url = "https://pixabay.com/api/";
 
 export default {
-  searchQuery: '',
+  query: "",
   page: 1,
 
-  fetchArticles() {
-    let url = `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${apiKey}`;
-    const options = {
-      headers: {
-        Authorization: apiKey,
-      },
-    };
+  async fetchMetod() {
+    const keyApi = "17646054-1a7be31ba7655627546e0833b";
+    const parametres = `?image_type=photo&orientation=horizontal&q=${this.query}&page=${this.page}&per_page=12&key=${keyApi}`;
 
-    return fetch(url)
-      .then(res => res.json())
-      .then(({ hits }) => {
-        this.page += 1;
-        return hits;
-      });
+    fetch(url).then((res) => res.json());
+
+    try {
+      const res = await fetch(url + parametres);
+      const data = await res.json();
+      // const ddd = await data.filter((d) => console.log(d));
+      this.incrementPage();
+      return data.hits;
+    } catch (e) {
+      console.error(e);
+    }
   },
   resetPage() {
-    this.page = 1;
+    this.pahe = 1;
   },
-  get query() {
-    return this.searchQuery;
+  incrementPage() {
+    this.page += 1;
   },
-  set query(value) {
-    this.searchQuery = value;
+  get queryValue() {
+    return this.query;
+  },
+  set queryValue(val) {
+    return (this.query = val);
   },
 };
-// ==================== Zdrok Vova ==================== //
+// =================== Petrovskii Andrii =================== //
 
 // ================== ============================ //
 // const url = `https://pixabay.com/api/`;

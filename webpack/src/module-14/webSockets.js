@@ -1,94 +1,121 @@
-// создание нового сокета
-const webSocket = new WebSocket("ws://echo.websocket.org");
+// console.log(typeof null);
+// console.log(typeof undefined);
+// console.log(typeof "string");
+// console.log(typeof 11);
+// console.log(typeof true);
 
-// события сокета (4):
-// open - соединение установлено,
-// message - получены данные,
-// error - ошибка,
-// close - соединение закрыто
+// console.log(undefined == false);
 
-webSocket.onopen = function () {
-  let msg = "Hello World!";
-  webSocket.send(msg);
-};
-webSocket.onmessage = function (e) {
-  console.log(e.data);
-};
-// методы сокета: send(data) & close([code], [reason])
+console.log("25px");
+console.log(Number("25px"));
+console.log(Number.parseFloat("25.1px"));
+console.log(Number.parseInt("25.1px"));
 
-// DataView
-// Typed arrays
-// Blobs
-// Uint8ClampedArray
-console.log(webSocket.binaryType); // blob
+// while(условие){
+// тело
+// }
 
-webSocket.binaryType = "arraybuffer";
-console.log(webSocket.binaryType); // arraybuffer
+// do {
 
-const buffer = new ArrayBuffer(16);
-console.log(buffer); // ArrayBuffer(16)
+// }while()
 
-const arr = new Uint16Array(buffer);
-console.log(arr); // Uint8Array(6)
-
-webSocket.readyState;
-
-// example
-const messages = document.querySelector(".messages");
-const input = document.querySelector(".input");
-
-let newSocket = new WebSocket("ws://chat.shas.tel");
-
-function wait(delay) {
-  return new Promise((r) => setTimeout(r, delay));
+for (let i = 0; i < 5; i++) {
+  console.log(`for is the best`);
 }
 
-function onOpen() {
-  newSocket.addEventListener("close", onClose);
-  newSocket.addEventListener("messages", onMessages);
+// const a != b || c ? b + c : b - c;
+// console.log(a);
+// // создание нового сокета
+// const webSocket = new WebSocket("ws://echo.websocket.org");
 
-  document.addEventListener("keydown", (e) => {
-    const text = input.value;
+// // события сокета (4):
+// // open - соединение установлено,
+// // message - получены данные,
+// // error - ошибка,
+// // close - соединение закрыто
 
-    if (!text) return;
-    if (e.keyCode !== 13) return;
+// webSocket.onopen = function () {
+//   let msg = "Hello World!";
+//   webSocket.send(msg);
+// };
+// webSocket.onmessage = function (e) {
+//   console.log(e.data);
+// };
+// // методы сокета: send(data) & close([code], [reason])
 
-    const msg = {
-      from: "Max",
-      message: input.value,
-    };
+// // DataView
+// // Typed arrays
+// // Blobs
+// // Uint8ClampedArray
+// console.log(webSocket.binaryType); // blob
 
-    input.value = "";
+// webSocket.binaryType = "arraybuffer";
+// console.log(webSocket.binaryType); // arraybuffer
 
-    newSocket.send(JSON.stringify(msg));
-  });
-  input.removeAttribute("disabled");
-}
+// const buffer = new ArrayBuffer(16);
+// console.log(buffer); // ArrayBuffer(16)
 
-async function onClose() {
-  newSocket.removeEventListener("open", onOpen);
-  newSocket.removeEventListener("close", onClose);
-  newSocket.addEventListener("messages", onMessages);
+// const arr = new Uint16Array(buffer);
+// console.log(arr); // Uint8Array(6)
 
-  await wait(2000);
+// webSocket.readyState;
 
-  newSocket = new WebSocket("ws://chat.shas.tel");
-  newSocket.addEventListener("open", onOpen);
-}
+// // example
+// const messages = document.querySelector(".messages");
+// const input = document.querySelector(".input");
 
-function onMessages(e) {
-  const { data } = e;
+// let newSocket = new WebSocket("ws://chat.shas.tel");
 
-  const msgs = JSON.parse(data);
+// function wait(delay) {
+//   return new Promise((r) => setTimeout(r, delay));
+// }
 
-  const fragment = document.createDocumentFragment();
+// function onOpen() {
+//   newSocket.addEventListener("close", onClose);
+//   newSocket.addEventListener("messages", onMessages);
 
-  msgs.forEach((m) => {
-    const msgElem = document.createElement("div");
-    msgElem.innerHTML = m.message;
-    fragment.appendChild(msgElem);
-  });
-  messages.appendChild(fragment);
-}
+//   document.addEventListener("keydown", (e) => {
+//     const text = input.value;
 
-newSocket.addEventListener("open", onOpen);
+//     if (!text) return;
+//     if (e.keyCode !== 13) return;
+
+//     const msg = {
+//       from: "Max",
+//       message: input.value,
+//     };
+
+//     input.value = "";
+
+//     newSocket.send(JSON.stringify(msg));
+//   });
+//   input.removeAttribute("disabled");
+// }
+
+// async function onClose() {
+//   newSocket.removeEventListener("open", onOpen);
+//   newSocket.removeEventListener("close", onClose);
+//   newSocket.addEventListener("messages", onMessages);
+
+//   await wait(2000);
+
+//   newSocket = new WebSocket("ws://chat.shas.tel");
+//   newSocket.addEventListener("open", onOpen);
+// }
+
+// function onMessages(e) {
+//   const { data } = e;
+
+//   const msgs = JSON.parse(data);
+
+//   const fragment = document.createDocumentFragment();
+
+//   msgs.forEach((m) => {
+//     const msgElem = document.createElement("div");
+//     msgElem.innerHTML = m.message;
+//     fragment.appendChild(msgElem);
+//   });
+//   messages.appendChild(fragment);
+// }
+
+// newSocket.addEventListener("open", onOpen);

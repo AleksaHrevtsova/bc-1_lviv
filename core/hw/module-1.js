@@ -1,43 +1,43 @@
-// 1
-const name = "Генератор защитного поля";
-let price = 1000;
-console.log(`Выбран "${name}", цена за штуку ${price} кредитов`);
-price = 2000;
-console.log(`Выбран "${name}", цена за штуку ${price} кредитов`);
+// // 1
+// const name = "Генератор защитного поля";
+// let price = 1000;
+// console.log(`Выбран "${name}", цена за штуку ${price} кредитов`);
+// price = 2000;
+// console.log(`Выбран "${name}", цена за штуку ${price} кредитов`);
 
-// 2
-const total = 100;
-let ordered = 50;
-if (ordered < total) {
-  console.log("Заказ оформлен, с вами свяжется менеджер");
-} else {
-  console.log("На складе недостаточно товаров");
-}
-// Заказ оформлен, с вами свяжется менеджер
+// // 2
+// const total = 100;
+// let ordered = 50;
+// if (ordered < total) {
+//   console.log("Заказ оформлен, с вами свяжется менеджер");
+// } else {
+//   console.log("На складе недостаточно товаров");
+// }
+// // Заказ оформлен, с вами свяжется менеджер
 
-ordered = 30;
-if (ordered < total) {
-  console.log("Заказ оформлен, с вами свяжется менеджер");
-} else {
-  console.log("На складе недостаточно товаров");
-}
-// Заказ оформлен, с вами свяжется менеджер
+// ordered = 30;
+// if (ordered < total) {
+//   console.log("Заказ оформлен, с вами свяжется менеджер");
+// } else {
+//   console.log("На складе недостаточно товаров");
+// }
+// // Заказ оформлен, с вами свяжется менеджер
 
-ordered = 80;
-if (ordered < total) {
-  console.log("Заказ оформлен, с вами свяжется менеджер");
-} else {
-  console.log("На складе недостаточно товаров");
-}
-// Заказ оформлен, с вами свяжется менеджер
+// ordered = 80;
+// if (ordered < total) {
+//   console.log("Заказ оформлен, с вами свяжется менеджер");
+// } else {
+//   console.log("На складе недостаточно товаров");
+// }
+// // Заказ оформлен, с вами свяжется менеджер
 
-ordered = 130;
-if (ordered <= total) {
-  console.log("Заказ оформлен, с вами свяжется менеджер");
-} else {
-  console.log("На складе недостаточно товаров");
-}
-// На складе недостаточно товаров
+// ordered = 130;
+// if (ordered <= total) {
+//   console.log("Заказ оформлен, с вами свяжется менеджер");
+// } else {
+//   console.log("На складе недостаточно товаров");
+// }
+// // На складе недостаточно товаров
 
 // // 3
 // const ADMIN_PASSWORD = "jqueryismyjam";
@@ -71,30 +71,37 @@ if (ordered <= total) {
 //   }
 // }
 
-// // 5
-// let message = prompt("Страна").toLowerCase();
+// 5
+let country = prompt("Страна").toLowerCase();
+let message;
+let price;
 
-// switch (message) {
-//   case "китай":
-//     alert("В Китай 100 кредитов");
-//     break;
-//   case "чили":
-//     alert("В Чили 250 кредитов");
-//     break;
-//   case "австралия":
-//     alert("В Австралию 170 кредитов");
-//     break;
-//   case "индия":
-//     alert("В Индию 80 кредитов");
-//     break;
-//   case "ямайка":
-//     alert("В Ямайку 120 кредитов");
-//     break;
-//   default:
-//     alert("В вашей стране доставка не доступна");
-//     break;
-// }
-
+switch (country) {
+  case "китай":
+    price = 100;
+    message = `В ${country} ${price} кредитов`;
+    break;
+  case "чили":
+    price = 250;
+    message = `В ${country} ${price} кредитов`;
+    break;
+  case "австралия":
+    price = 170;
+    message = `В ${country} ${price} кредитов`;
+    break;
+  case "индия":
+    price = 80;
+    message = `В ${country} ${price} кредитов`;
+    break;
+  case "ямайка":
+    price = 120;
+    message = `В ${country} ${price} кредитов`;
+    break;
+  default:
+    message = "В вашей стране доставка не доступна";
+    break;
+}
+alert(message);
 // // 6
 // let input;
 // let totalNum = 0;

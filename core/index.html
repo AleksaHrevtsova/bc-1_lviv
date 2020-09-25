@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="./css/style.css" /> -->
+    <link rel="stylesheet" href="./css/gallery.css" />
+    <title>BC-1 LVIV</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- <link rel="stylesheet" href="./css/style.css" /> -->
-  <link rel="stylesheet" href="./css/gallery.css">
-  <title>BC-1 LVIV</title>
-</head>
+  <body>
+    <!-- В этот список добавляй элементы галереи -->
+    <ul class="gallery js-gallery"></ul>
 
-<body>
-  <!-- В этот список добавляй элементы галереи -->
-  <ul class="gallery js-gallery"></ul>
-
-  <!--
+    <!--
       Модальное окно для полноразмерного изображения
       Для того чтобы открыть, необходимо добавить на div.lightbox CSS-класс is-open
     -->
-  <div class="lightbox js-lightbox">
-    <div class="lightbox__overlay"></div>
+    <div class="lightbox js-lightbox">
+      <div class="lightbox__overlay"></div>
 
-    <div class="lightbox__content">
-      <img class="lightbox__image" src="#" alt="" />
+      <div class="lightbox__content">
+        <img class="lightbox__image" src="#" alt="" />
+      </div>
+
+      <button
+        type="button"
+        class="lightbox__button"
+        data-action="close-lightbox"
+      ></button>
     </div>
 
-    <button type="button" class="lightbox__button" data-action="close-lightbox"></button>
-  </div>
-
-  <!-- TK-1 -->
-  <!-- <ul id="categories">
+    <!-- TK-1 -->
+    <!-- <ul id="categories">
     <li class="item">
       <h2>Тварини</h2>
 
@@ -61,33 +64,33 @@
     </li>
   </ul> -->
 
-  <!-- TK-2 -->
-  <!-- <ul id="ingredients"></ul> -->
+    <!-- TK-2 -->
+    <!-- <ul id="ingredients"></ul> -->
 
-  <!-- TK-3 -->
-  <!-- <ul id="gallery"></ul> -->
+    <!-- TK-3 -->
+    <!-- <ul id="gallery"></ul> -->
 
-  <!-- TK-4 -->
-  <!-- <div id="counter">
+    <!-- TK-4 -->
+    <!-- <div id="counter">
     <button type="button" data-action="decrement">-1</button>
     <span id="value">0</span>
     <button type="button" data-action="increment">+1</button>
   </div> -->
 
-  <!-- TK-5 -->
-  <!-- <input type="text" placeholder="Ваше ім'я?" id="name-input" />
+    <!-- TK-5 -->
+    <!-- <input type="text" placeholder="Ваше ім'я?" id="name-input" />
   <h1>Привіт, <span id="name-output">незнайомець</span>!</h1> -->
 
-  <!-- TK-6 -->
-  <!-- <input type="text" id="validation-input" data-length="6" placeholder="Введи 6 символів" /> -->
+    <!-- TK-6 -->
+    <!-- <input type="text" id="validation-input" data-length="6" placeholder="Введи 6 символів" /> -->
 
-  <!-- TK-7 -->
-  <!-- <input id="font-size-control" type="range" />
+    <!-- TK-7 -->
+    <!-- <input id="font-size-control" type="range" />
   <br />
   <span id="text">Абракадабра!</span> -->
 
-  <!-- TK-8 -->
-  <!-- <div id="controls">
+    <!-- TK-8 -->
+    <!-- <div id="controls">
     <input type="number" min="0" max="100" step="1" />
     <button type="button" data-action="render">Створити</button>
     <button type="button" data-action="destroy">Очистити</button>
@@ -95,17 +98,26 @@
 
   <div id="boxes"></div> -->
 
-  <script type="module" src="gallery-items.js"></script>
-  <!-- <script type="module" src="./hw/module-1.js"></script> -->
-  <!-- <script type="module" src="./hw/module-2.js"></script> -->
-  <!-- <script type="module" src="./hw/module-3.js"></script> -->
-  <!-- <script type="module" src="./hw/module-4.js"></script> -->
-  <!-- <script type="module" src="./hw/module-5.js"></script> -->
-  <!-- <script type="module" src="./hw/module-6.js"></script> -->
-  <!-- <script type="module" src="./hw/module-7.js"></script> -->
-  <script type="module" src="./hw/module-8.js"></script>
-  <!-- <script type="module" src="users.js"></script> -->
-  <!-- <script type="module" src="service.js"></script> -->
-</body>
-
+    <!-- <script type="module" src="gallery-items.js"></script> -->
+    <!-- <script type="module" src="./hw/module-1.js"></script> -->
+    <!-- <script type="module" src="./hw/module-2.js"></script> -->
+    <!-- <script type="module" src="./hw/module-3.js"></script> -->
+    <!-- <script type="module" src="./hw/module-4.js"></script> -->
+    <!-- <script type="module" src="./hw/module-2.js"></script> -->
+    <!-- <script type="module" src="./hw/module-5.js"></script> -->
+    <!-- <script type="module" src="./db-js/users.js"></script> -->
+    <!-- <script type="module" src="./hw/module-6.js"></script> -->
+    <!-- <script type="module" src="./hw/module-7.js"></script> -->
+    <!-- <script type="module" src="./hw/module-8.js"></script> -->
+    <!-- <script type="module" src="service.js"></script> -->
+    <script type="module" src="add.js"></script>
+    <!-- <script type="module" src="class.js"></script> -->
+    <!-- <script type="module" src="cb.js"></script> -->
+    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ex magni porro voluptates nemo voluptatibus,
+    molestias officiis laudantium voluptate quos cupiditate quod nobis magnam optio tempora iste, explicabo placeat sed.
+  </p>
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto ut, labore quod tempora laborum quisquam esse
+    eius non nihil cum aliquam deserunt est incidunt, facere debitis distinctio aperiam itaque accusantium.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, aspernatur aut. Possimus velit in impedit ducimus veritatis iusto laboriosam. Totam distinctio voluptas, numquam animi, voluptate magnam ad vitae ut harum aliquam illo quidem eos at labore, provident ratione recusandae reprehenderit!</p> -->
+  </body>
 </html>

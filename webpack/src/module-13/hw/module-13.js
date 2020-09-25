@@ -287,58 +287,91 @@
 // // });
 // // ================== Shevchuk Peter =================== //
 
-// ==================== Zdrok Vova ==================== //
-import "./styles/style.css";
-import debounce from "lodash.debounce";
-import apiService from "./js/apiService.js";
-import updateArticlesMarkup from "./js/update-articles-markup.js";
-import refs from "./js/refs";
-console.log(refs.searchInput);
+// // ==================== Zdrok Vova ==================== //
+// import "./styles/style.css";
+// import debounce from "lodash.debounce";
+// import apiService from "./js/apiService.js";
+// import updateArticlesMarkup from "./js/update-articles-markup.js";
+// import refs from "./js/refs";
+// console.log(refs.searchInput);
 
-import * as basicLightbox from "basiclightbox";
-import "basiclightbox/dist/basicLightbox.min.css";
+// import * as basicLightbox from "basiclightbox";
+// import "basiclightbox/dist/basicLightbox.min.css";
 
-refs.articlesContainer.addEventListener("click", onePage);
+// refs.articlesContainer.addEventListener("click", onePage);
 
-function onePage(event) {
-  if (event.target.nodeName === "IMG") {
-    const instance = basicLightbox.create(
-      `<img   src="${event.target.dataset.source}" /> `,
-    );
+// function onePage(event) {
+//   if (event.target.nodeName === "IMG") {
+//     const instance = basicLightbox.create(
+//       `<img   src="${event.target.dataset.source}" /> `,
+//     );
 
-    instance.show();
-  }
-}
-refs.searchForm.addEventListener(
-  "input",
-  debounce(() => {
-    setUrl();
-  }, 550),
-);
+//     instance.show();
+//   }
+// }
+// refs.searchForm.addEventListener(
+//   "input",
+//   debounce(() => {
+//     setUrl();
+//   }, 550),
+// );
 
-function setUrl() {
-  apiService.query = refs.searchInput.value;
-  apiService.resetPage();
-  refs.loadMoreBtn.classList.add("is-hidden");
-  refs.articlesContainer.innerHTML = "";
-  apiService.fetchArticles().then((hits) => {
-    updateArticlesMarkup(hits);
-    refs.loadMoreBtn.classList.remove("is-hidden");
-    window.scrollTo({
-      top: document.documentElement.offsetHeight,
-      behavior: "smooth",
-    });
-  });
-}
+// function setUrl() {
+//   apiService.query = refs.searchInput.value;
+//   apiService.resetPage();
+//   refs.loadMoreBtn.classList.add("is-hidden");
+//   refs.articlesContainer.innerHTML = "";
+//   apiService.fetchArticles().then((hits) => {
+//     updateArticlesMarkup(hits);
+//     refs.loadMoreBtn.classList.remove("is-hidden");
+//     window.scrollTo({
+//       top: document.documentElement.offsetHeight,
+//       behavior: "smooth",
+//     });
+//   });
+// }
 
-refs.loadMoreBtn.addEventListener("click", () => {
-  apiService.fetchArticles().then((hits) => {
-    updateArticlesMarkup(hits);
-  });
-});
-// ==================== Zdrok Vova ==================== //
+// refs.loadMoreBtn.addEventListener("click", () => {
+//   apiService.fetchArticles().then((hits) => {
+//     updateArticlesMarkup(hits);
+//   });
+// });
+// // ==================== Zdrok Vova ==================== //
 
 // ==================== Petrovskii Andrii ==================== //
+import "./styles/style.css";
+import "./js/apiService.js";
+import getData from "./js/apiService.js";
+import template from "./templates/template.hbs";
+
+const refs = {
+  form: document.querySelector(".search-form"),
+  list: document.querySelector(".gallery"),
+  button: document.querySelector(".load__more"),
+};
+
+refs.form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  refs.list.innerHTML = "";
+  getData.resetPage();
+  let input = event.currentTarget.elements.query.value;
+  getData.query = input;
+  getData.fetchMetod().then((hits) => {
+    const markup = template(hits);
+    refs.list.insertAdjacentHTML("beforeend", markup);
+    refs.button.classList.remove("is__hiden");
+  });
+});
+
+refs.button.addEventListener("click", () => {
+  getData.fetchMetod().then((hits) => {
+    const markup = template(hits);
+    refs.list.insertAdjacentHTML("beforeend", markup);
+  });
+});
+// ==================== Petrovskii Andrii ==================== //
+
+// ===========================================================
 // import "./style.css";
 // import "./apiService.js";
 // import getData from "./apiService.js";
@@ -376,4 +409,3 @@ refs.loadMoreBtn.addEventListener("click", () => {
 //     refs.list.insertAdjacentHTML("afterbegin", markup);
 //   });
 // });
-// ==================== Petrovskii Andrii ==================== //
