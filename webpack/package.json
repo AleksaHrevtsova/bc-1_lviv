@@ -50,7 +50,7 @@
   "dependencies": {
     "@pnotify/core": "^5.1.2",
     "@pnotify/mobile": "^5.1.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "basiclightbox": "^5.0.3",
     "faker": "^4.1.0",
     "infinite-scroll": "^3.0.6",
